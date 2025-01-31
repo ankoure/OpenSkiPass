@@ -1,0 +1,13 @@
+from django.contrib import admin
+from django.contrib.gis.admin import GISModelAdmin
+from .models import Resort
+
+# Register your models here.
+# class ResortAdmin(admin.ModelAdmin):
+#   list_display = ("resortname",)
+# admin.site.register(Resort,ResortAdmin)
+
+
+class ResortAdmin(GISModelAdmin):
+    list_display = ("resortname",)
+admin.site.register(Resort,ResortAdmin)
