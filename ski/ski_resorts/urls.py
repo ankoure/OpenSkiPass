@@ -5,7 +5,7 @@ from ski_resorts.views import MapView
 
 
 urlpatterns = [
-    path('ski_resorts/', views.landingpage, name='landingpage'),
+    path('', views.landingpage, name='landingpage'),
     path("map/", MapView.as_view()),
 
 ]
