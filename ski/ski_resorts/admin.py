@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.gis.admin import GISModelAdmin
-from .models import Resort
+from .models import Resort,skiarea
 
 # Register your models here.
 # class ResortAdmin(admin.ModelAdmin):
@@ -11,3 +11,8 @@ from .models import Resort
 class ResortAdmin(GISModelAdmin):
     list_display = ("resortname",)
 admin.site.register(Resort,ResortAdmin)
+
+
+class SkiAreaAdmin(GISModelAdmin):
+    list_display = ("name","location")
+admin.site.register(skiarea,SkiAreaAdmin)

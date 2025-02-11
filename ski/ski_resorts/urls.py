@@ -5,7 +5,9 @@ from ski_resorts.views import MapView
 
 
 urlpatterns = [
-    path('', views.landingpage, name='landingpage'),
-    path("map/", MapView.as_view()),
+    path("", TemplateView.as_view(
+            template_name="map.html"
+            ),
+        ),
 
 ]

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    "rest_framework",
+    "rest_framework_gis",
     'ski_resorts'
 ]
 
@@ -88,8 +90,8 @@ DATABASES = {
 	}
 }
 
-GEOS_LIBRARY_PATH = '/opt/bitnami/postgresql/lib/libgeos_c.so'
-GDAL_LIBRARY_PATH = '/opt/bitnami/postgresql/lib/libgdal.so'
+GEOS_LIBRARY_PATH = "C:\\OSGeo4W\\bin\\geos_c.dll"
+GDAL_LIBRARY_PATH = "C:\\OSGeo4W\\bin\\gdal309.dll"
 GDAL_DATA = '/opt/bitnami/postgresql/share/gdal'
 
 
