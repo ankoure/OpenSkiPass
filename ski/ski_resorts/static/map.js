@@ -41,7 +41,7 @@ async function render_markers() {
       // Add a pop-up for each feature
       if (feature.properties && feature.properties.passaffiliation) {
         layer.bindPopup(() => {
-            let popupContent = `<b>${feature.properties.name}</b><br>`;
+            let popupContent = `<b>${feature.properties.name} (${feature.properties.passaffiliation})</b><br>`;
             // Add website link if it exists
             if (feature.properties.website) {
                 popupContent += `<a href="${feature.properties.website}" target="_blank">Ski Resort Website</a><br>`;
