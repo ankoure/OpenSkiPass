@@ -90,9 +90,9 @@ DATABASES = {
 	}
 }
 
-GEOS_LIBRARY_PATH = "C:\\OSGeo4W\\bin\\geos_c.dll"
-GDAL_LIBRARY_PATH = "C:\\OSGeo4W\\bin\\gdal309.dll"
-GDAL_DATA = '/opt/bitnami/postgresql/share/gdal'
+GEOS_LIBRARY_PATH = str(os.getenv('GEOS_LIBRARY_PATH'))
+GDAL_LIBRARY_PATH = str(os.getenv('GDAL_LIBRARY_PATH'))
+GDAL_DATA = str(os.getenv('GDAL_DATA'))
 
 
 # Password validation

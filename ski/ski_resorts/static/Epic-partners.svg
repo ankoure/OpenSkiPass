@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
-   sodipodi:docname="Ikon.svg"
+   sodipodi:docname="Epic-partners.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,10 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     showguides="false"
-     inkscape:zoom="45.254834"
-     inkscape:cx="6.993728"
-     inkscape:cy="5.8888737"
+     inkscape:zoom="36.71875"
+     inkscape:cx="7.1761702"
+     inkscape:cy="5.9506383"
      inkscape:window-width="2560"
      inkscape:window-height="1377"
      inkscape:window-x="-8"
@@ -39,19 +38,12 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="fill:#000000"
-       id="rect1"
-       width="16"
-       height="16"
-       x="0"
-       y="-0.016236776" />
-    <rect
-       style="fill:#0d283a;fill-opacity:1"
-       id="rect2"
-       width="15"
-       height="15"
-       x="0.5"
-       y="0.4982391" />
+    <ellipse
+       style="fill:#808080;stroke-width:1.07485;fill-opacity:1"
+       id="path1"
+       cx="8.0068092"
+       cy="8.0068083"
+       rx="7.9523406"
+       ry="7.9523401" />
   </g>
 </svg>

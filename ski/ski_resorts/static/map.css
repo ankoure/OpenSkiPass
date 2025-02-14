@@ -6,4 +6,27 @@ html, body {
     height: 100%;
     width: 100%;
   }
-  
+
+.legend {
+  background-color: white;
+  padding: 10px;
+  line-height: 1.5;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  gap: 10px;
+}
+
+
+
+.legend-item img{
+  width: 16px;
+  height: 16px;  
+}
+

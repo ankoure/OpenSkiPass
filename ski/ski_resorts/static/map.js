@@ -40,7 +40,8 @@ async function render_markers() {
       }
       // Add a pop-up for each feature
       if (feature.properties && feature.properties.passaffiliation) {
-        layer.bindPopup(() => {
+        layer.bindPopup(() => {        
+    
             let popupContent = `<b>${feature.properties.name} (${feature.properties.passaffiliation})</b><br>`;
             // Add website link if it exists
             if (feature.properties.website) {
@@ -72,22 +73,41 @@ const layerGroups = {
 const layerControl = L.control.layers(null, layerGroups).addTo(map);
 
 function createSvgIcon(feature) {
-  switch(feature.properties.passaffiliation) {
-    case "Ikon":
+  var feature_switch = feature.properties.passaffiliation + "-" + feature.properties.partnered
+  switch(feature_switch) {
+    case "Ikon-false":
       return L.icon({
         iconUrl: 'static/Ikon.svg',
         iconSize:     [16, 16],
         iconAnchor:   [22, 22],
         popupAnchor:  [-3, -26]})
-    case "Epic":
+    case "Ikon-true":
+      return L.icon({
+        iconUrl: 'static/Ikon.svg',
+        iconSize:     [16, 16],
+        iconAnchor:   [22, 22],
+        popupAnchor:  [-3, -26]})
+    case "Epic-false":
       return L.icon({
         iconUrl: 'static/Epic.svg',
         iconSize:     [16, 16], 
         iconAnchor:   [22, 22], 
         popupAnchor:  [-3, -26]})
-    case "Indy":
+    case "Epic-true":
+      return L.icon({
+        iconUrl: 'static/Epic-partners.svg',
+        iconSize:     [16, 16], 
+        iconAnchor:   [22, 22], 
+        popupAnchor:  [-3, -26]})
+    case "Indy-false":
       return L.icon({
         iconUrl: 'static/indypass.svg',
+        iconSize:     [16, 16], 
+        iconAnchor:   [22, 22],
+        popupAnchor:  [-3, -26]})
+    case "Indy-true":
+      return L.icon({
+        iconUrl: 'static/indypass-allied.svg',
         iconSize:     [16, 16], 
         iconAnchor:   [22, 22],
         popupAnchor:  [-3, -26]})
@@ -101,3 +121,40 @@ function createSvgIcon(feature) {
   }
 
 }
+
+ // Define the legend control
+ var legend = L.control({ position: 'bottomright' });
+
+ legend.onAdd = function(map) {
+   var div = L.DomUtil.create('div', 'legend');
+   div.innerHTML = `
+   <div class="legend-item">
+     <img class="legend-icon" src="static/indypass.svg" alt="Indy Pass Logo - White snowflake with red background">
+     <span>Indy Pass</span>
+   </div>
+   <div class="legend-item">
+     <img class="legend-icon" src="static/indypass-allied.svg" alt="Indy Pass Ally Logo - White snowflake with gray background">
+     <span>Indy Pass Allied</span>
+   </div>
+   <div class="legend-item">
+     <img class="legend-icon" src="static/Ikon.svg" alt="Black Square">
+     <span>Ikon Pass</span>
+   </div>
+   <div class="legend-item">
+     <img class="legend-icon" src="static/Epic.svg" alt="Orange Triangle">
+     <span>Epic Pass</span>
+   </div>
+   <div class="legend-item">
+     <img class="legend-icon" src="static/Epic-partners.svg" alt="Gray Circle">
+     <span>Epic Pass Partner</span>
+   </div>
+   <div class="legend-item">
+     <img class="legend-icon" src="static/skiier.svg" alt="Depiction of a skiier going downhill colored blue">
+     <span>Unaffiliated</span>
+   </div>
+ `;
+   return div;
+ };
+
+ // Add the legend to the map
+ legend.addTo(map);
