@@ -84,9 +84,9 @@ DATABASES = {
 	'default': {
 		'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'HOST': os.getenv('PGHOST'),
-		'USER': os.getenv('PGUSER'),
-        'NAME': 'django',
-		'PASSWORD': os.getenv('PGPASS'),
+		'USER': os.getenv('PGSUPERUSER'),
+        'NAME': 'django_dev',
+		'PASSWORD': os.getenv('PGSUPERUSERPASSWORD'),
 	}
 }
 

@@ -14,5 +14,5 @@ admin.site.register(Resort,ResortAdmin)
 
 
 class SkiAreaAdmin(GISModelAdmin):
-    list_display = ("name","location")
+    list_display = ("name","geom")
 admin.site.register(skiarea,SkiAreaAdmin)

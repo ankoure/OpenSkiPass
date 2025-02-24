@@ -8,5 +8,5 @@ class SkiAreaSerializer(
 ):
     class Meta:
         fields = ("id", "name","passaffiliation","partnered","website")
-        geo_field = "location"
+        geo_field = "geom"
         model = skiarea

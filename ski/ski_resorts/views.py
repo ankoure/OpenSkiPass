@@ -34,7 +34,7 @@ class MapView(ListView):
 class SkiAreaViewSet(
     viewsets.ReadOnlyModelViewSet,
 ):
-    bbox_filter_field = "location"
+    bbox_filter_field = "geom"
     filter_backends = [filters.InBBoxFilter]
     queryset = skiarea.objects.filter(operatingstatus = 'operating', alpine=True)
     serializer_class = SkiAreaSerializer
