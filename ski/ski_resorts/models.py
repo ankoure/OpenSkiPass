@@ -32,6 +32,15 @@ class skiarea(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+class ski_area_isochrone:
+    isochrone_pk = models.UUIDField( 
+         primary_key = True, 
+         default = uuid.uuid4, 
+         editable = False)
+    ski_area = models.ForeignKey(skiarea, on_delete=models.CASCADE)
+    contour = models.IntegerField()
+    geom = models.PolygonField()
     
 
 
