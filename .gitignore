@@ -3,6 +3,7 @@
 #venv environment
 openskipass/
 
+*.geojson
 ### Django ###
 *.log
 *.pot
