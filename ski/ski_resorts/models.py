@@ -51,15 +51,15 @@ class aerialway(models.Model):
          editable = False)
     # populated by values found here: https://wiki.openstreetmap.org/wiki/Key:aerialway?uselang=en
     # exclude zip_line, goods, pylon, station
-    aerialway_type = models.CharField()
+    aerialway_type = models.CharField(null=True)
     #j-bar, platter, and rope_tow imply 1 while t-bar implies 2, all else variable
-    occupancy = models.IntegerField()
+    occupancy = models.IntegerField(null=True)
     #people per hour, numeric
-    capacity = models.IntegerField()
+    capacity = models.IntegerField(null=True)
     #Average journey time in minutes
-    duration = models.IntegerField()
+    duration = models.IntegerField(null=True)
     #gondola,chairlift,mixed_lift imply yes, but cable_car, t-bar, j-bar, platter, rope_tow and magic carper imply no
-    detachable = models.BooleanField()
+    detachable = models.BooleanField(null=True)
     #only common for chair_lift
     bubble = models.BooleanField(default=False)
     heating = models.BooleanField(default=False)
@@ -72,11 +72,11 @@ class trail(models.Model):
          primary_key = True, 
          default = uuid.uuid4, 
          editable = False)
-    name = models.CharField()
-    difficulty = models.CharField()
-    grooming = models.CharField()
-    lit = models.BooleanField()
-    piste_type = models.CharField()
+    name = models.CharField(null=True)
+    difficulty = models.CharField(null=True)
+    grooming = models.CharField(null=True)
+    lit = models.BooleanField(null=True)
+    piste_type = models.CharField(null=True)
     geom = models.LineStringField()
     ski_area = models.ForeignKey(skiarea,on_delete=models.CASCADE)
 
@@ -86,9 +86,9 @@ class glade(models.Model):
          primary_key = True, 
          default = uuid.uuid4, 
          editable = False)
-    name = models.CharField()
-    difficulty = models.CharField()
-    piste_type = models.CharField()
+    name = models.CharField(null=True)
+    difficulty = models.CharField(null=True)
+    piste_type = models.CharField(null=True)
     geom = models.PolygonField()
     ski_area = models.ForeignKey(skiarea,on_delete=models.CASCADE)
 
